@@ -1,0 +1,13 @@
+{
+  "name": "sms-analyser",
+  "version": "1.0.0",
+  "description": "Simple SMS analyzer with Ollama integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "xml2js": "^0.6.2"
+  }
+}

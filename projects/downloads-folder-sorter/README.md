@@ -1,0 +1,1 @@
+A simple nodeJS project that goes through my downloads for the day and uses Ollama (local) to automatically sort them and put them on the right folders. 
