@@ -1,0 +1,1 @@
+ollama create mario-llama3.2 -f Modelfile
