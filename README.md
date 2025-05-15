@@ -101,9 +101,14 @@ We see the same shift happening in India, where students, developers, and busine
 
 ## Contributors
 
+<<<<<<< HEAD
 - [Leonard Selvaraja](https://github.com/ifly-leonard)
 - [icrewsystems](https://github.com/icrewsystemsofficial)
 - [IIT Madras Research Park](https://www.iitm.ac.in/research-park/iitm-research-park)
+=======
+- [Your Name](https://github.com/yourusername)
+- IIT Madras AI Team
+>>>>>>> 6229bd7a1904852b1497986fca226711c3cd0f71
 - Special thanks to Jaya Shakthi Kannan and Aravintha S for identifying the gap and pushing to address it
 
 ## License
