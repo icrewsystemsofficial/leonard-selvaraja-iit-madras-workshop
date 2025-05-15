@@ -38,22 +38,28 @@ if (!question) {
   process.exit(1);
 }
 
-// Embed query
+// Convert the user's question into an embedding vector using the nomic-embed-text model
+// This transforms the text into a numerical representation that captures its semantic meaning
 const queryEmbed = await ollama.embeddings({
-  model: 'nomic-embed-text',
-  prompt: question,
+  model: 'nomic-embed-text',  // Using nomic-embed-text model for generating embeddings
+  prompt: question,           // The user's question is used as input
 });
-const qVec = queryEmbed.embedding;
+const qVec = queryEmbed.embedding;  // Extract the embedding vector from the response
 
-// Retrieve top 5 similar chunks
-const results = await index.queryItems(qVec, 5);
+// Search the vector database for the most similar chunks to the question
+// This uses vector similarity search to find the most semantically relevant content
+const results = await index.queryItems(qVec, 5);  // Get top 5 most similar chunks
+// Combine the text content from the retrieved chunks into a single context string
+// This context will be used to help answer the user's question
 const context = results.map(r => r.item.metadata.text).join('\n');
+
+console.log(context);
 
 // Ask LLM
 const finalPrompt = `Context:\n${context}\n\nAnswer this question: ${question}`;
 
 const answer = await ollama.chat({
-  model: 'jarvis',
+  model: 'llama3.2',
   messages: [{ role: 'user', content: finalPrompt }],
 });
 
